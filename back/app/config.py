@@ -17,9 +17,6 @@ def get_var(key: str, missing_ok: bool = False) -> str | None:
         raise KeyError(f"Environment variable '{key}' must be specified")
 
 
-# Load environment variables from .env
-load_dotenv()
-
 # Database parameters
 DB_USERNAME = get_var("DB_USERNAME")
 DB_PASSWORD = get_var("DB_PASSWORD")

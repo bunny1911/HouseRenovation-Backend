@@ -1,0 +1,9 @@
+FastAPI==0.110.2
+SQLAlchemy[asyncio]==2.0.29
+Alembic==1.13.1
+Uvicorn==0.29.0
+asyncpg==0.29.0
+Pydantic==2.7.1
+Sentry-SDK[FastAPI]==2.0.1
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.2

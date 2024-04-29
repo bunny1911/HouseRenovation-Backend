@@ -1,0 +1,37 @@
+version: "3.8"
+
+volumes:
+  pg_data:
+
+services:
+
+  database:
+    image: postgres:16
+
+    restart: always
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+    volumes:
+      - pg_data:/var/lib/postgresql
+
+    ports:
+      - "15432:5432"
+
+  server:
+    image: server
+
+    build:
+      context: ./back
+      dockerfile: ./Dockerfile
+
+    ports:
+      - "8080:80"
+
+    network_mode: "host"
+
+    depends_on:
+      - database
